@@ -65,7 +65,7 @@ const seedApplications = [
 function loadApplications() {
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
-    return Array.isArray(saved) ? saved : seedApplications;
+    return Array.isArray(saved) && saved.length ? saved : seedApplications;
   } catch {
     return seedApplications;
   }
